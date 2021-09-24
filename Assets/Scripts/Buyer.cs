@@ -14,6 +14,6 @@ public class Buyer : MonoBehaviour
     private void Delete()
     {
         _spawner.StartSpawn();
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

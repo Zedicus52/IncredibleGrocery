@@ -7,6 +7,7 @@ public class Order : MonoBehaviour
     [SerializeField] private SpriteRenderer[] _iconsProducts;
     private int[] _orderedProductsID;
     private int _amountProducts;
+    private const int _maxAmountProducts = 4;
     public int AmountProducts { get { return _amountProducts; } }
     public int[] OrderedProductID { get { return _orderedProductsID; } }
 
@@ -14,7 +15,7 @@ public class Order : MonoBehaviour
 
     public void CreateOrder()
     {
-        _amountProducts = Random.Range(1,4);
+        _amountProducts = Random.Range(1,_maxAmountProducts);
         _orderedProductsID = new int[_amountProducts];
         GenerateOrder();
         SetIcons();
@@ -26,14 +27,14 @@ public class Order : MonoBehaviour
         Debug.Log("Amount Products " + _amountProducts);
         for (int i = 0; i < _amountProducts; i++)
         {
-            int ID;
-            for (; ; )
+            int id;
+            for (; ;)
             {
                 bool dontRepeat = true;
-                ID = Random.Range(0, _allProducts.Count);
+                id = Random.Range(0, _allProducts.Count);
                 for (int j = 0; j < _amountProducts; j++)
                 {
-                    if (ID == _orderedProductsID[j])
+                    if (id == _orderedProductsID[j])
                     {
                         dontRepeat = false;
                         break;
@@ -44,7 +45,7 @@ public class Order : MonoBehaviour
                     break;
                 }
             }
-            _orderedProductsID[i] = ID;
+            _orderedProductsID[i] = id;
             Debug.Log("Ordered product " + _orderedProductsID[i]);
         }
     }
@@ -55,6 +56,4 @@ public class Order : MonoBehaviour
             _iconsProducts[i].sprite = _allProducts[_orderedProductsID[i]];
         }
     }
-
-
 }

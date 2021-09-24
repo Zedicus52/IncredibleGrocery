@@ -356,7 +356,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 1876639594}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
@@ -1943,7 +1943,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 1876639594}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: MusicController
         m_Mode: 1
@@ -2791,8 +2791,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2880,43 +2878,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984da7524a0c39c4b862ea9b9fa09e84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _balanceText: {fileID: 1060550399}
-  _audioManager: {fileID: 1994034726}
-  _addMoney: {fileID: 8300000, guid: c9b99af9eecd7cf41913c8dd4107ce4d, type: 3}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39cf3c1e0ff76d948919663a92dd6f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectImage: {fileID: 1593057121}
-  _musicImage: {fileID: 341129123}
-  _wallet: {fileID: 519420033}
-  _colors:
-  - {r: 0.13725491, g: 1, b: 0.14117648, a: 1}
-  - {r: 1, g: 0.13725491, b: 0.14117648, a: 1}
-  _musicText: {fileID: 1207187187}
-  _effectText: {fileID: 1648921467}
-  _mixer: {fileID: 24300002, guid: 1b02189d417215a439aeadeac982fdfc, type: 2}
-  _settingsPanel: {fileID: 2138531079}
 --- !u!1 &571516142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,7 +4824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _order: {fileID: 8586442742597931920}
   _sellButton: {fileID: 791622899}
-  _wallet: {fileID: 519420033}
+  _wallet: {fileID: 1352882866}
   _allProducts:
   - {fileID: 21300000, guid: ad5e21e7f1bf88b42943cf4d66348ea7, type: 3}
   - {fileID: 21300000, guid: 78b7db381264cfa41afb72d5b4313e3f, type: 3}
@@ -4896,9 +4857,8 @@ MonoBehaviour:
   - {fileID: 896263271}
   - {fileID: 1528913758}
   - {fileID: 276524713}
-  _grades:
-  - {fileID: 21300000, guid: 92ddd37bff36f1640a7e948ce762f21c, type: 3}
-  - {fileID: 21300000, guid: 704573b74b7524d4fa5f9951e901a56a, type: 3}
+  _positiveGrade: {fileID: 21300000, guid: 92ddd37bff36f1640a7e948ce762f21c, type: 3}
+  _negativeGrade: {fileID: 21300000, guid: 704573b74b7524d4fa5f9951e901a56a, type: 3}
   _items:
   - {fileID: 585840462}
   - {fileID: 1247570058}
@@ -5266,7 +5226,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 1876639594}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: DeleteAllKey
         m_Mode: 1
@@ -7212,6 +7172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352882865}
+  - component: {fileID: 1352882866}
   m_Layer: 5
   m_Name: Wallet
   m_TagString: Untagged
@@ -7240,6 +7201,21 @@ RectTransform:
   m_AnchoredPosition: {x: 12, y: -105}
   m_SizeDelta: {x: 415, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1352882866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352882864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984da7524a0c39c4b862ea9b9fa09e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _balanceText: {fileID: 1060550399}
+  _audioManager: {fileID: 1994034726}
+  _addMoney: {fileID: 8300000, guid: c9b99af9eecd7cf41913c8dd4107ce4d, type: 3}
 --- !u!1 &1356375199
 GameObject:
   m_ObjectHideFlags: 0
@@ -8443,7 +8419,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 1876639594}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: EffectController
         m_Mode: 1
@@ -9535,6 +9511,7 @@ GameObject:
   - component: {fileID: 1876639593}
   - component: {fileID: 1876639592}
   - component: {fileID: 1876639591}
+  - component: {fileID: 1876639594}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -9618,7 +9595,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 1876639594}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SettingsController
         m_Mode: 1
@@ -9668,6 +9645,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876639589}
   m_CullTransparentMesh: 1
+--- !u!114 &1876639594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876639589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cf3c1e0ff76d948919663a92dd6f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectImage: {fileID: 1593057121}
+  _musicImage: {fileID: 341129123}
+  _wallet: {fileID: 1352882866}
+  _green: {r: 0.13725491, g: 1, b: 0.14117648, a: 1}
+  _red: {r: 1, g: 0.13725491, b: 0.14117648, a: 1}
+  _musicText: {fileID: 1207187187}
+  _effectText: {fileID: 1648921467}
+  _mixer: {fileID: 24300002, guid: 1b02189d417215a439aeadeac982fdfc, type: 2}
+  _settingsPanel: {fileID: 2138531079}
 --- !u!1 &1944438829
 GameObject:
   m_ObjectHideFlags: 0

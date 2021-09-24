@@ -9,15 +9,13 @@ public class StorageItem : MonoBehaviour
     private bool _isSelected = false;
     [SerializeField] private Image _marker;
     [SerializeField] private Storage _storage;
-    [SerializeField] private int _id;
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private AudioClip _selectClip;
     private void Awake()
     {
         _image = GetComponent<Image>();
     }
-
-
+    
     public void NullifyItems()
     {
         _isSelected = false;
@@ -26,31 +24,35 @@ public class StorageItem : MonoBehaviour
     }
    
 
-    public void SelectItem(int ID)
+    public void SelectItem(int id)
     {
         _isSelected = !_isSelected;
         if (_storage.CanSelect)
         {
-            if (_isSelected == true)
+            if (_isSelected)
             {
-                _image.color = new Color(255, 255, 255, 0.3f);
-                _storage.SelectItem(ID);
+                _image.color = SetAlpha(0.3f);
+                _storage.SelectItem(id);
                 _audioManager.PlayEffect(_selectClip);
             }
-            else if (_isSelected == false)
+            else
             {
-                _image.color = new Color(255, 255, 255, 1);
-                _storage.UnSelectItem(ID);
+                _image.color = SetAlpha(1f);
+                _storage.UnSelectItem(id);
                 _audioManager.PlayEffect(_selectClip);
             }
             _marker.enabled = _isSelected;
         }
-        else if(_storage.CanSelect == false && _marker.enabled == true)
+        else if(!_storage.CanSelect && _marker.enabled)
         {
-            _image.color = new Color(255, 255, 255, 1);
-            _storage.UnSelectItem(ID);
+            _image.color = SetAlpha(1f);
+            _storage.UnSelectItem(id);
             _audioManager.PlayEffect(_selectClip);
             _marker.enabled = false;
         }
+    }
+    private Color SetAlpha(float alpha)
+    {
+        return new Color(1, 1, 1, alpha);
     }
 }

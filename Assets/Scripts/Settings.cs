@@ -10,7 +10,8 @@ public class Settings : MonoBehaviour
     [SerializeField] private Image _effectImage;
     [SerializeField] private Image _musicImage;
     [SerializeField] private Wallet _wallet;
-    [SerializeField] private Color[] _colors;
+    [SerializeField] private Color _green;
+    [SerializeField] private Color _red;
     [SerializeField] private TMP_Text _musicText;
     [SerializeField] private TMP_Text _effectText;
     [SerializeField] private AudioMixerGroup _mixer;
@@ -20,50 +21,38 @@ public class Settings : MonoBehaviour
     private bool _isActive = false;
     private bool _greenColor = true;
 
-    public void Start()
+    private void Start()
     {
-        if (PlayerPrefs.HasKey("MusicOn"))
-        {
-            if (PlayerPrefs.GetInt("MusicOn") == 1)
-            {
-                _musicOn = true;
-                _mixer.audioMixer.SetFloat("MusicVolume", 0f);
-            }
-            else if (PlayerPrefs.GetInt("MusicOn") == 0)
-            {
-                _musicOn = false;
-                _mixer.audioMixer.SetFloat("MusicVolume", -80f);
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("MusicOn", 1);
-        }
-
-        if (PlayerPrefs.HasKey("EffectOn"))
-        {
-            if (PlayerPrefs.GetInt("EffectOn") == 1)
-            {
-                _effectOn = true;
-                _mixer.audioMixer.SetFloat("UIVolume", 0f);
-            }
-            else if (PlayerPrefs.GetInt("EffectOn") == 0)
-            {
-                _effectOn = false;
-                _mixer.audioMixer.SetFloat("UIVolume", -80f);
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("EffectOn", 1);
-        }
+        float volume = 0f;
+        LoadAudioSettings("MusicOn", ref volume, ref _musicOn);
+        _mixer.audioMixer.SetFloat("MusicVolume", volume);
+ 
+       LoadAudioSettings("EffectOn", ref volume, ref _effectOn);
+        _mixer.audioMixer.SetFloat("UIVolume", volume);
+        
         EffectController();
         MusicController();
     }
 
+    private void LoadAudioSettings(string settingKey, ref float volume, ref bool setting)
+    {
+        if (PlayerPrefs.HasKey(settingKey))
+        {
+            setting = PlayerPrefs.GetInt(settingKey) == 1;
+            if (setting)
+            {
+                volume = 0f;
+            }
+            else
+            {
+                volume = -80f;
+            }
+        }
+    }
+
     public void EffectController()
     {
-        if (_effectOn == true)
+        if (_effectOn)
         {
             _mixer.audioMixer.SetFloat("UIVolume", 0f);
             _greenColor = true;
@@ -81,7 +70,7 @@ public class Settings : MonoBehaviour
     public void MusicController()
     {
         
-        if (_musicOn == true)
+        if (_musicOn)
         {
             _mixer.audioMixer.SetFloat("MusicVolume", 0f);
             _greenColor = true;
@@ -95,24 +84,24 @@ public class Settings : MonoBehaviour
         SetIcon(_musicImage, _musicText, _greenColor);
     }
 
-    private void SetIcon(Image image, TMP_Text text, bool enabled)
+    private void SetIcon(Image image, TMP_Text text, bool onEnabled)
     {
-        if (enabled == true)
+        if (onEnabled)
         {
             text.text = "ON";
-            image.color = _colors[0];
+            image.color = _green;
         }
         else
         {
             text.text = "OFF";
-            image.color = _colors[1];
+            image.color = _red;
         }
     }
 
    public void SettingsController()
     {
         _isActive = !_isActive;
-        if(_isActive == true)
+        if(_isActive)
         {
             _settingsPanel.SetActive(_isActive);
             Time.timeScale = 0.0f;
@@ -127,22 +116,10 @@ public class Settings : MonoBehaviour
     public void Save()
     {
         PlayerPrefs.SetInt("Balance", _wallet.Balance);
-        if(_effectOn == true)
-        {
-            PlayerPrefs.SetInt("EffectOn", 0);
-        }
-        else if(_effectOn == false)
-        {
-            PlayerPrefs.SetInt("EffectOn", 1);
-        }
-        if(_musicOn == true)
-        {
-            PlayerPrefs.SetInt("MusicOn", 0);
-        }
-        else if(_musicOn == false)
-        {
-            PlayerPrefs.SetInt("MusicOn", 1);
-        }
+        
+        PlayerPrefs.SetInt("EffectOn", _effectOn ? 0 : 1);
+        PlayerPrefs.SetInt("MusicOn", _musicOn ? 0 : 1);
+        
         PlayerPrefs.Save();
     }
 

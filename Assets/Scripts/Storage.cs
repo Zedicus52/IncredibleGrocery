@@ -13,13 +13,16 @@ public class Storage : MonoBehaviour
     [SerializeField] private List<Sprite> _markersIcon;
     [SerializeField] private List<SpriteRenderer> _icons;
     [SerializeField] private List<SpriteRenderer> _markers;
-    [SerializeField] private List<Sprite> _grades;
+    [SerializeField] private Sprite _positiveGrade;
+    [SerializeField] private Sprite _negativeGrade;
     [SerializeField] private List<StorageItem> _items;
     [SerializeField] private int _priceOneItem = 10;
     private byte _countSelectedItem = 0;
     private int[] _readyOrderID;
     private bool _correctOrder = false;
     private bool _end = false;
+    private float _checkDelay = 0.5f;
+    private float _visibleDelay = 1f;
     public bool End { get { return _end; } }
 
     
@@ -48,7 +51,7 @@ public class Storage : MonoBehaviour
 
     public void TrySell()
     {
-        if(CanSell() == true)
+        if(CanSell())
         {
             _sellButton.interactable = true;
             SetIcons();
@@ -91,14 +94,14 @@ public class Storage : MonoBehaviour
         }
         _countSelectedItem -= 1;
     }
-    private void CheckProduct(int ID)
+    private void CheckProduct(int id)
     {
         bool right = false;
         for (int i = 0; i < _order.AmountProducts; i++)
         {
             for (int j = 0; j < _readyOrderID.Length; j++)
             {
-                if (_order.OrderedProductID[j] == _readyOrderID[ID])
+                if (_order.OrderedProductID[j] == _readyOrderID[id])
                 {
                     right = true;
                     break;
@@ -109,19 +112,24 @@ public class Storage : MonoBehaviour
                 break;
             }
         }
-        if (right == true)
+        if (right)
         {
-            _markers[ID].sprite = _markersIcon[0];
-            _icons[ID].color = new Color(255, 255, 255, 0.3f);
+            _markers[id].sprite = _markersIcon[0];
+            _icons[id].color = SetAlpha(0.3f);
             _correctOrder = true;
             _wallet.FinalSum = _priceOneItem;
         }
         else
         {
-            _markers[ID].sprite = _markersIcon[1];
-            _icons[ID].color = new Color(255, 255, 255, 0.3f);
+            _markers[id].sprite = _markersIcon[1];
+            _icons[id].color = SetAlpha(0.3f);
             _correctOrder = false;
         }
+    }
+
+    private Color SetAlpha(float alpha)
+    {
+        return new Color(1, 1, 1, alpha);
     }
 
     public void Sell()
@@ -132,14 +140,14 @@ public class Storage : MonoBehaviour
     private void GradeOrder()
     {
         Nullify();
-        if(_correctOrder == true)
+        if(_correctOrder)
         {
-            _order.GradeIcon[1].sprite = _grades[0];
+            _order.GradeIcon[1].sprite = _positiveGrade;//great
             _wallet.DoubleSum();
         }
         else
         {
-            _order.GradeIcon[1].sprite = _grades[1];
+            _order.GradeIcon[1].sprite = _negativeGrade;//bad
         }
     }
 
@@ -149,7 +157,7 @@ public class Storage : MonoBehaviour
         for (int i = 0; i < _order.GradeIcon.Length; i++)
         {
             _order.GradeIcon[i].sprite = null;
-            _icons[i].color = new Color(255, 255, 255, 1);
+            _icons[i].color = SetAlpha(1f);
             _icons[i].sprite = null;
             _markers[i].sprite = null;
         }
@@ -162,17 +170,17 @@ public class Storage : MonoBehaviour
 
     private IEnumerator CheckOrder()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_visibleDelay);
         for (int i = 0; i < _order.AmountProducts; i++)
         {
             CheckProduct(i);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(_checkDelay);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_visibleDelay);
         _end = true;
         GradeOrder();
         _wallet.UpdateBalance(_wallet.FinalSum);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_visibleDelay);
         Nullify();
         _end = false;
         _correctOrder = false;

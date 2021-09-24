@@ -29,7 +29,7 @@ public class OrderManager : MonoBehaviour
 
    
 
-    IEnumerator CreateOrder()
+    private IEnumerator CreateOrder()
     {
         _order.CreateOrder();
         _orderInfo.SetActive(true);
@@ -39,7 +39,7 @@ public class OrderManager : MonoBehaviour
         _audioManager.PlayEffect(_orderOff);
         yield return new WaitForSeconds(0.25f);
         _storageAnimator.SetTrigger("Open");
-        yield return new WaitUntil(() => _storage.End == true);
+        yield return new WaitUntil(() => _storage.End);
         _orderInfo.SetActive(true);
         _audioManager.PlayEffect(_orderOn);
         _cashierOrder.SetActive(false);

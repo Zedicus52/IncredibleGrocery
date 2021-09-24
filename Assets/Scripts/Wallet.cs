@@ -16,7 +16,7 @@ public class Wallet : MonoBehaviour
     private void Start()
     {
         _balance = PlayerPrefs.GetInt("Balance");
-        _balanceText.text = "$ " + _balance.ToString();
+        _balanceText.text = "$ " + _balance;
     }
 
     public void DoubleSum()
@@ -27,7 +27,7 @@ public class Wallet : MonoBehaviour
     public void UpdateBalance(int sum)
     {
         _balance += sum;
-        _balanceText.text = "$ "+_balance.ToString();
+        _balanceText.text = "$ "+_balance;
         _audioManager.PlayEffect(_addMoney);
     }
 
