@@ -8,10 +8,10 @@ public class Order : MonoBehaviour
     private int[] _orderedProductsID;
     private int _amountProducts;
     private const int _maxAmountProducts = 4;
-    public int AmountProducts { get { return _amountProducts; } }
-    public int[] OrderedProductID { get { return _orderedProductsID; } }
+    public int AmountProducts => _amountProducts;
+    public int[] OrderedProductID => _orderedProductsID;
 
-    public SpriteRenderer[] GradeIcon { get { return _iconsProducts; } }
+    public SpriteRenderer[] GradeIcon => _iconsProducts;
 
     public void CreateOrder()
     {
@@ -27,11 +27,10 @@ public class Order : MonoBehaviour
         Debug.Log("Amount Products " + _amountProducts);
         for (int i = 0; i < _amountProducts; i++)
         {
-            int id;
-            for (; ;)
+            bool dontRepeat = true;
+            while (dontRepeat)
             {
-                bool dontRepeat = true;
-                id = Random.Range(0, _allProducts.Count);
+                int id = Random.Range(0, _allProducts.Count);
                 for (int j = 0; j < _amountProducts; j++)
                 {
                     if (id == _orderedProductsID[j])
@@ -42,10 +41,10 @@ public class Order : MonoBehaviour
                 }
                 if (dontRepeat)
                 {
+                    _orderedProductsID[i] = id;
                     break;
                 }
             }
-            _orderedProductsID[i] = id;
             Debug.Log("Ordered product " + _orderedProductsID[i]);
         }
     }

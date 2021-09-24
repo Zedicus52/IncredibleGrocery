@@ -23,9 +23,8 @@ public class Storage : MonoBehaviour
     private bool _end = false;
     private float _checkDelay = 0.5f;
     private float _visibleDelay = 1f;
-    public bool End { get { return _end; } }
+    public bool End => _end;
 
-    
 
     public void Initialization()
     {
@@ -142,12 +141,12 @@ public class Storage : MonoBehaviour
         Nullify();
         if(_correctOrder)
         {
-            _order.GradeIcon[1].sprite = _positiveGrade;//great
+            _order.GradeIcon[1].sprite = _positiveGrade;
             _wallet.DoubleSum();
         }
         else
         {
-            _order.GradeIcon[1].sprite = _negativeGrade;//bad
+            _order.GradeIcon[1].sprite = _negativeGrade;
         }
     }
 

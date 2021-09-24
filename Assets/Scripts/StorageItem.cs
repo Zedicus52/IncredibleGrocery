@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class StorageItem : MonoBehaviour
 {
-    private Image _image;
-    private bool _isSelected = false;
+    
     [SerializeField] private Image _marker;
     [SerializeField] private Storage _storage;
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private AudioClip _selectClip;
+    private Image _image;
+    private bool _isSelected = false;
     private void Awake()
     {
         _image = GetComponent<Image>();
@@ -19,7 +20,7 @@ public class StorageItem : MonoBehaviour
     public void NullifyItems()
     {
         _isSelected = false;
-        _image.color = new Color(255, 255, 255, 1);
+        _image.color = Color.white;
         _marker.enabled = false ;
     }
    

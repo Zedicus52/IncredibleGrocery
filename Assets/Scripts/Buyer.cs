@@ -6,9 +6,9 @@ public class Buyer : MonoBehaviour
 {
     private Spawner _spawner;
 
-    private void Awake()
+    public Spawner Spawner
     {
-        _spawner = GameObject.Find("Main Camera").GetComponent<Spawner>();
+        set => _spawner = value;
     }
 
     private void Delete()

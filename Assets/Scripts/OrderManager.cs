@@ -17,10 +17,11 @@ public class OrderManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Buyer"))
+        if(other.TryGetComponent(out Buyer buyer))
         {
             _order = _orderInfo.GetComponent<Order>();
-            _buyerAnimator = GameObject.FindGameObjectWithTag("Buyer").GetComponent<Animator>();
+            _buyerAnimator = buyer.GetComponent<Animator>();
+            buyer.Spawner = GetComponent<Spawner>();
             StartCoroutine(CreateOrder());
             other.enabled = false;
             _storage.Initialization();

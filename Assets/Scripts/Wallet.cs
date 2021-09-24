@@ -5,13 +5,17 @@ using TMPro;
 
 public class Wallet : MonoBehaviour
 {
-    private int _finalSum = 0;
-    private int _balance = 0;
     [SerializeField] private TMP_Text _balanceText;
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private AudioClip _addMoney;
-    public int FinalSum { get { return _finalSum; } set { _finalSum += value; } }
-    public int Balance { get { return _balance; } }
+    private int _finalSum = 0;
+    private int _balance = 0;
+    public int FinalSum 
+    { 
+        get => _finalSum; 
+        set => _finalSum += value;
+    }
+    public int Balance => _balance;
 
     private void Start()
     {
