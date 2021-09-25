@@ -13,6 +13,7 @@ public class Storage : MonoBehaviour
     [SerializeField] private List<Sprite> _markersIcon;
     [SerializeField] private List<SpriteRenderer> _icons;
     [SerializeField] private List<SpriteRenderer> _markers;
+    [SerializeField] private SpriteRenderer _grade;
     [SerializeField] private Sprite _positiveGrade;
     [SerializeField] private Sprite _negativeGrade;
     [SerializeField] private List<StorageItem> _items;
@@ -95,23 +96,23 @@ public class Storage : MonoBehaviour
     }
     private void CheckProduct(int id)
     {
-        bool right = false;
+        bool correct = false;
         for (int i = 0; i < _order.AmountProducts; i++)
         {
             for (int j = 0; j < _readyOrderID.Length; j++)
             {
                 if (_order.OrderedProductID[j] == _readyOrderID[id])
                 {
-                    right = true;
+                    correct = true;
                     break;
                 }
             }
-            if(right)
+            if(correct)
             {
                 break;
             }
         }
-        if (right)
+        if (correct)
         {
             _markers[id].sprite = _markersIcon[0];
             _icons[id].color = SetAlpha(0.3f);
@@ -141,12 +142,12 @@ public class Storage : MonoBehaviour
         Nullify();
         if(_correctOrder)
         {
-            _order.GradeIcon[1].sprite = _positiveGrade;
+            _grade.sprite = _positiveGrade;
             _wallet.DoubleSum();
         }
         else
         {
-            _order.GradeIcon[1].sprite = _negativeGrade;
+            _grade.sprite = _negativeGrade;
         }
     }
 
@@ -156,6 +157,7 @@ public class Storage : MonoBehaviour
         for (int i = 0; i < _order.GradeIcon.Length; i++)
         {
             _order.GradeIcon[i].sprite = null;
+            _grade.sprite = null;
             _icons[i].color = SetAlpha(1f);
             _icons[i].sprite = null;
             _markers[i].sprite = null;

@@ -2,17 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="365c6f31-1ac9-4e34-a409-e2cf983cc723" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraScale.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraScale.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IncredibleGrocery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IncredibleGrocery/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Buyer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Buyer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OrderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OrderManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Storage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Storage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StorageItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StorageItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 19.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 19.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 19.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 20.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 20.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 20.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 21.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 21.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 22.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 22.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 22.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 55.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 55.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 55.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 55.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 56.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 56.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 56.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 56.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 57.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 57.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 57.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 58.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 58.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 58.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 58.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 59.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 59.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 59.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 59.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 60.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 60.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 60.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 61.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 61.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 61.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 61.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 62.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 62.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 62.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 62.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 63.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 63.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 63.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 63.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 64.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 64.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 65.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 65.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 65.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 65.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 66.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 66.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 66.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 66.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 67.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 67.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 67.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 67.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 68.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 68.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 68.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 68.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 69.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 69.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 69.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 69.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 70.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 70.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 70.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/Rectangle 70.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/BalancePanel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/BalancePanel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/Rectangle 10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/Rectangle 10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/SettingImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/SettingImage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/SettingsButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/SettingsButton.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/selected_badge (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/selected_badge (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/selected_badge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/selected_badge.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/.png" beforePathEscaped="$PROJECT_DIR$/Assets/Sprites/UI/👍.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/.png.meta" beforePathEscaped="$PROJECT_DIR$/Assets/Sprites/UI/👍.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/.png" beforePathEscaped="$PROJECT_DIR$/Assets/Sprites/UI/😡.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/.png.meta" beforePathEscaped="$PROJECT_DIR$/Assets/Sprites/UI/😡.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +120,8 @@
       <option name="presentableId" value="Default" />
       <updated>1632477646055</updated>
       <workItem from="1632477657386" duration="7369000" />
-      <workItem from="1632496823127" duration="1532000" />
+      <workItem from="1632496823127" duration="2206000" />
+      <workItem from="1632560121404" duration="723000" />
     </task>
     <servers />
   </component>
