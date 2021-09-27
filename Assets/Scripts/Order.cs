@@ -38,12 +38,9 @@ public class Order : MonoBehaviour
                         dontRepeat = false;
                         break;
                     }
-                }
-                if (dontRepeat)
-                {
                     _orderedProductsID[i] = id;
-                    break;
                 }
+               
             }
             Debug.Log("Ordered product " + _orderedProductsID[i]);
         }

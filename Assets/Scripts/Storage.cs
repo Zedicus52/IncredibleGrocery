@@ -39,11 +39,7 @@ public class Storage : MonoBehaviour
    
     private bool CanSell()
     {
-        if(_countSelectedItem == _order.AmountProducts)
-        {
-            return true;
-        }
-        return false;
+        return _countSelectedItem == _order.AmountProducts;
     }
     public bool CanSelect => !CanSell();
 
@@ -115,22 +111,18 @@ public class Storage : MonoBehaviour
         if (correct)
         {
             _markers[id].sprite = _markersIcon[0];
-            _icons[id].color = SetAlpha(0.3f);
+            _icons[id].color = Utils.SetAplha(Color.white, 0.3f);
             _correctOrder = true;
             _wallet.FinalSum = _priceOneItem;
         }
         else
         {
             _markers[id].sprite = _markersIcon[1];
-            _icons[id].color = SetAlpha(0.3f);
+            _icons[id].color = Utils.SetAplha(Color.white, 0.3f);
             _correctOrder = false;
         }
     }
-
-    private Color SetAlpha(float alpha)
-    {
-        return new Color(1, 1, 1, alpha);
-    }
+    
 
     public void Sell()
     {
@@ -158,7 +150,7 @@ public class Storage : MonoBehaviour
         {
             _order.GradeIcon[i].sprite = null;
             _grade.sprite = null;
-            _icons[i].color = SetAlpha(1f);
+            _icons[i].color = Utils.SetAplha(Color.white, 1f);
             _icons[i].sprite = null;
             _markers[i].sprite = null;
         }

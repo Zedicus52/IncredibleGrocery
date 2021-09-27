@@ -10,19 +10,26 @@ public class Settings : MonoBehaviour
     [SerializeField] private Image _effectImage;
     [SerializeField] private Image _musicImage;
     [SerializeField] private Wallet _wallet;
-    [SerializeField] private Color _green;
-    [SerializeField] private Color _red;
+    [SerializeField] private Sprite _onSprite;
+    [SerializeField] private Sprite _offSprite;
     [SerializeField] private TMP_Text _musicText;
     [SerializeField] private TMP_Text _effectText;
     [SerializeField] private AudioMixerGroup _mixer;
     [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private Button _saveButton;
+    [SerializeField] private Button _musicButton;
+    [SerializeField] private Button _effectButton;
+    private Button _settingsButton;
+    [SerializeField] private AudioClip _clickAudio;
     private bool _effectOn = true;
     private bool _musicOn = true;
     private bool _isActive = false;
-    private bool _greenColor = true;
+    private bool _on = true;
 
     private void Start()
     {
+        _settingsButton = GetComponent<Button>();
         float volume = 0f;
         LoadAudioSettings("MusicOn", ref volume, ref _musicOn);
         _mixer.audioMixer.SetFloat("MusicVolume", volume);
@@ -32,6 +39,20 @@ public class Settings : MonoBehaviour
         
         EffectController();
         MusicController();
+        
+        _settingsButton.onClick.AddListener(SettingsController);
+        _settingsButton.onClick.AddListener(Play);
+        _effectButton.onClick.AddListener(EffectController);
+        _effectButton.onClick.AddListener(Play);
+        _musicButton.onClick.AddListener(MusicController);
+        _musicButton.onClick.AddListener(Play);
+        _saveButton.onClick.AddListener(Save);
+        
+    }
+
+    private void Play()
+    {
+        _audioManager.PlayEffect(_clickAudio);
     }
 
     private void LoadAudioSettings(string settingKey, ref float volume, ref bool setting)
@@ -52,18 +73,19 @@ public class Settings : MonoBehaviour
 
     public void EffectController()
     {
+       
         if (_effectOn)
         {
             _mixer.audioMixer.SetFloat("UIVolume", 0f);
-            _greenColor = true;
+            _on = true;
         }
         else 
         {
             _mixer.audioMixer.SetFloat("UIVolume", -80f);
-            _greenColor = false;
+            _on = false;
         }
         _effectOn = !_effectOn;
-        SetIcon(_effectImage, _effectText, _greenColor);
+        SetIcon(_effectImage, _effectText, _on);
     }
 
 
@@ -73,15 +95,15 @@ public class Settings : MonoBehaviour
         if (_musicOn)
         {
             _mixer.audioMixer.SetFloat("MusicVolume", 0f);
-            _greenColor = true;
+            _on = true;
         }
         else 
         {
             _mixer.audioMixer.SetFloat("MusicVolume", -80f);
-            _greenColor = false;
+            _on = false;
         }
         _musicOn = !_musicOn;
-        SetIcon(_musicImage, _musicText, _greenColor);
+        SetIcon(_musicImage, _musicText, _on);
     }
 
     private void SetIcon(Image image, TMP_Text text, bool onEnabled)
@@ -89,12 +111,12 @@ public class Settings : MonoBehaviour
         if (onEnabled)
         {
             text.text = "ON";
-            image.color = _green;
+            image.sprite = _onSprite;
         }
         else
         {
             text.text = "OFF";
-            image.color = _red;
+            image.sprite = _offSprite;
         }
     }
 

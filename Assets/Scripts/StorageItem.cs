@@ -32,13 +32,13 @@ public class StorageItem : MonoBehaviour
         {
             if (_isSelected)
             {
-                _image.color = SetAlpha(0.3f);
+                _image.color = Utils.SetAplha(Color.white, 0.3f);
                 _storage.SelectItem(id);
                 _audioManager.PlayEffect(_selectClip);
             }
             else
             {
-                _image.color = SetAlpha(1f);
+                _image.color = Utils.SetAplha(Color.white, 1f);
                 _storage.UnSelectItem(id);
                 _audioManager.PlayEffect(_selectClip);
             }
@@ -46,14 +46,11 @@ public class StorageItem : MonoBehaviour
         }
         else if(!_storage.CanSelect && _marker.enabled)
         {
-            _image.color = SetAlpha(1f);
+            _image.color = Utils.SetAplha(Color.white, 1f);
             _storage.UnSelectItem(id);
             _audioManager.PlayEffect(_selectClip);
             _marker.enabled = false;
         }
     }
-    private Color SetAlpha(float alpha)
-    {
-        return new Color(1, 1, 1, alpha);
-    }
+    
 }
