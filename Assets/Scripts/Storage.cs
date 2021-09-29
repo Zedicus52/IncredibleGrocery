@@ -25,6 +25,8 @@ public class Storage : MonoBehaviour
     private float _checkDelay = 0.5f;
     private float _visibleDelay = 1f;
     public bool End => _end;
+    
+    
 
 
     public void Initialization()
@@ -35,6 +37,7 @@ public class Storage : MonoBehaviour
         {
             _readyOrderID[i] = -255;
         }
+        
     }
    
     private bool CanSell()
@@ -47,14 +50,10 @@ public class Storage : MonoBehaviour
 
     public void TrySell()
     {
-        if(CanSell())
+        _sellButton.interactable = CanSell();
+        if (CanSell())
         {
-            _sellButton.interactable = true;
             SetIcons();
-        }
-        else
-        {
-            _sellButton.interactable = false;
         }
     }
     private void SetIcons()
@@ -95,19 +94,10 @@ public class Storage : MonoBehaviour
         bool correct = false;
         for (int i = 0; i < _order.AmountProducts; i++)
         {
-            for (int j = 0; j < _readyOrderID.Length; j++)
-            {
-                if (_order.OrderedProductID[j] == _readyOrderID[id])
-                {
-                    correct = true;
-                    break;
-                }
-            }
-            if(correct)
-            {
-                break;
-            }
+            correct = _order.OrderedProductID[i] == _readyOrderID[id];
+            break;
         }
+       
         if (correct)
         {
             _markers[id].sprite = _markersIcon[0];
@@ -132,15 +122,8 @@ public class Storage : MonoBehaviour
     private void GradeOrder()
     {
         Nullify();
-        if(_correctOrder)
-        {
-            _grade.sprite = _positiveGrade;
-            _wallet.DoubleSum();
-        }
-        else
-        {
-            _grade.sprite = _negativeGrade;
-        }
+        _grade.sprite = _correctOrder ? _positiveGrade : _negativeGrade;
+        _wallet.DoubleSum(_correctOrder);
     }
 
     private void Nullify()

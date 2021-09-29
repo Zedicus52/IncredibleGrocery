@@ -23,9 +23,10 @@ public class Wallet : MonoBehaviour
         _balanceText.text = "$ " + _balance;
     }
 
-    public void DoubleSum()
+    public void DoubleSum(bool grade)
     {
-        _finalSum *= 2;
+        if(grade)
+            _finalSum *= 2;
     }
 
     public void UpdateBalance(int sum)

@@ -28,7 +28,7 @@ public class Order : MonoBehaviour
         for (int i = 0; i < _amountProducts; i++)
         {
             bool dontRepeat = true;
-            while (dontRepeat)
+            do
             {
                 int id = Random.Range(0, _allProducts.Count);
                 for (int j = 0; j < _amountProducts; j++)
@@ -40,8 +40,7 @@ public class Order : MonoBehaviour
                     }
                     _orderedProductsID[i] = id;
                 }
-               
-            }
+            } while (dontRepeat);
             Debug.Log("Ordered product " + _orderedProductsID[i]);
         }
     }
