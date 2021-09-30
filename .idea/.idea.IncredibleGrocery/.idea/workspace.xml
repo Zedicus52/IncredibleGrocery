@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="365c6f31-1ac9-4e34-a409-e2cf983cc723" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IncredibleGrocery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IncredibleGrocery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Storage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Storage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/RobotoMono-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/RobotoMono-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
       <workItem from="1632755307439" duration="2388000" />
       <workItem from="1632818911853" duration="1441000" />
       <workItem from="1632845722482" duration="3713000" />
-      <workItem from="1632904984713" duration="686000" />
+      <workItem from="1632904984713" duration="1002000" />
     </task>
     <servers />
   </component>
