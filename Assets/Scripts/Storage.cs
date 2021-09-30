@@ -71,10 +71,11 @@ public class Storage : MonoBehaviour
             if(_readyOrderID[i]==-255)
             {
                 _readyOrderID[i] = ID;
+                _countSelectedItem += 1;
                 break;
             }
         }
-        _countSelectedItem += 1;
+       
     }
 
     public void UnSelectItem(int ID)
@@ -84,18 +85,30 @@ public class Storage : MonoBehaviour
             if (_readyOrderID[i] == ID)
             {
                 _readyOrderID[i] = -255;
+                _countSelectedItem -= 1;
                 break;
             }
         }
-        _countSelectedItem -= 1;
+        
+        return;
     }
     private void CheckProduct(int id)
     {
         bool correct = false;
         for (int i = 0; i < _order.AmountProducts; i++)
         {
-            correct = _order.OrderedProductID[i] == _readyOrderID[id];
-            break;
+            for (int j = 0; j < _readyOrderID.Length; j++)
+            {
+                if (_order.OrderedProductID[j] == _readyOrderID[id])
+                {
+                    correct = true;
+                    break;
+                }
+            }
+            if(correct)
+            {
+                break;
+            }
         }
        
         if (correct)

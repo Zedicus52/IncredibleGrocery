@@ -27,20 +27,25 @@ public class Order : MonoBehaviour
         Debug.Log("Amount Products " + _amountProducts);
         for (int i = 0; i < _amountProducts; i++)
         {
-            bool dontRepeat = true;
-            do
+            int ID;
+            for (; ;)
             {
-                int id = Random.Range(0, _allProducts.Count);
+                bool dontRepeat = true;
+                ID = Random.Range(0, _allProducts.Count);
                 for (int j = 0; j < _amountProducts; j++)
                 {
-                    if (id == _orderedProductsID[j])
+                    if (ID == _orderedProductsID[j])
                     {
                         dontRepeat = false;
                         break;
                     }
-                    _orderedProductsID[i] = id;
                 }
-            } while (dontRepeat);
+                if (dontRepeat)
+                {
+                    break;
+                }
+            }
+            _orderedProductsID[i] = ID;
             Debug.Log("Ordered product " + _orderedProductsID[i]);
         }
     }
